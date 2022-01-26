@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>   
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- 메타포 설정 -->
+    <meta name="title" content="세종 행복나들이 홈페이지">
+    <meta name="keywords" content="세종 행복나들이, 행복나들이, 세종시 여행정보">
+    <meta name="description" content="세종 행복나들이 홈페이지">
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:title" content="세종 행복나들이 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sejong.go.kr/tour.do">
+    <meta property="og:description" content="세종 행복나들이, 행복여행, 세종대표명소">
+    <meta property="og:image" content="./img/mv_1_1.jpg" />
+    <!-- 폰트 로딩 -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 외부 스타일 연결 -->
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <script src="slick/slick.js"></script>
+<title>게시판 목록</title>
+<style>
+.hd{height: auto;}
+body, html {
+width: 100%;
+font-family: 'Noto Sans KR', sans-serif;
+}    
+.vs {clear: both; width: 100%; height: 460px;
+background-image: url("../include/source/svisual_img01.jpg"); background-position: center center;
+background-repeat: no-repeat;}
+.content_wrap{clear: both; width: 1200px; margin: 0 auto; margin-top: -148px;}
+.sub_tit {height: 144px;line-height: 144px; font-size: 22px; background-color: 
+#808080; text-align: center; width: 190px; float: left; color:#fff;}
+.bread_box {height: 119px; background-color: #fff; width: 980px; float: right;
+padding-left: 30px; padding-top: 24px; border-bottom: 1px solid #999;
+position: relative;}
+.cate_tit {color: #999; font-size: 24px;}
+.bread {padding-top: 24px;line-height: 1.6;font-size: 16px;}
+.bread a, .bread span {color: #999;}
+.bread span.cur{ color: #222; font-weight: 600;}
+.sub_tit_ico_box {position: absolute; right: 30px; bottom: 18px;}
+.sub_tit_ico_box li {float: left; margin-left: 10px;}
+.sub_tit_ico_box li a{display: block; color: #fff;}
+.sub_tit_ico_box li a.ico {width: 34px;height: 34px; background-position: center
+center; background-repeat: no-repeat; border-radius: 18px; border:1px solid #ccc}
+.sub_tit_ico_box li a.ico.item1 {background-image: url("");}
+.sub_tit_ico_box li a.ico.item2 {background-image: url("");}
+.sub_tit_ico_box li a.btn {border-radius: 18px; padding: 6px 12px; width: auto;
+background-color: #999;}
+
+.leftbar {width: 190px;float: left; min-height: 44.5vh; background-color: #f0f0f0;}
+.lnb {clear: both;}
+.lnb li {clear: both; margin: 5px 6px; border: 1px solid #aaa; line-height: 52px;}
+.lnb li a {color: #222; font-size: 14px; padding-left: 1em;}
+.page_box {width: 980px; float: right; padding-left: 30px;}
+
+.page {padding-top: 40px; overflow: auto; height: auto; min-height: 100vh;}
+.page_tit {padding-bottom: 36px; color: #666;}
+.sub_pic img {display: block; width: 100%; height: auto;}
+.sub_pic_tit {font-size: 20px; line-height: 1.6;}
+.sub_pic_com {font-size: 14px; line-height: 1.6; padding-bottom: 24px;}
+.sub_full_tit {color: #808080; line-height: 3; font-size: 32px; text-align: center;}
+.sub_con img {display: block; min-width: 100%;}
+.sub_cate_com {padding: 14px; font-style: 12px; color: #666; line-height: 1.8;
+width: 940px; font-weight: 300;}
+.map_area {clear: both; position: relative;}
+.cont_wrap{min-height: 60vh;}
+.title{padding-left:850px;}
+.table{padding-left:100px;}
+input{width: 300px; height: 50px; font-size: 15px; background-color: rgba(219, 219, 219,0.1);}
+a {padding:5px;font-size: 16px;}
+.blank { clear:both; float:none; width:100%; height:60px; } 
+</style>
+</head>
+<body>
+<div class="wrap">
+	<header class="hd fix">
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <h2 class="logo_tit">행복나들이</h2>
+                <img src="./img/logo.png" alt="로고">
+            </a>
+            <nav class="tnb">
+                <ul>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li class="user_name">OOO님</li>
+                    <li><a href="mypage.html">마이페이지</a></li>
+                    <li><a href="logout.html">로그아웃</a></li>
+                    <li><a href="board_list.html">게시판</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="sejong1.html" class="dp1">한눈에 세종</a>
+                        <ul class="sub">
+                            <li><a href="sejong1.html#page1">세종 대표명소</a>
+                                <!-- 하위메뉴 -->
+                            </li>
+                            <li><a href="sejong1.html#page2">체험관광</a>
+                                <!-- 하위메뉴 -->
+                            </li>
+                            <li><a href="sejong1.html#page3">캠핑여행</a>
+                                <!-- 하위메뉴 -->
+                            </li>
+                            <li><a href="sejong1.html#page4">추천코스</a>
+                                <!-- 하위메뉴 -->
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="sejong2.html" class="dp1">세종여행</a>
+                        <ul class="sub">
+                            <li><a href="sejong2.html#page1">대표축제</a></li>
+                            <li><a href="sejong2.html#page2">여행테마</a></li>
+                            <li><a href="sejong2.html#page3">음식</a></li>
+                            <li><a href="sejong2.html#page4">숙박</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="sejong3.html" class="dp1">즐거운 축제</a>
+                        <ul class="sub">
+                            <li><a href="sejong3.html#page1">세종 축제</a></li>
+                            <li><a href="sejong3.html#page2">복숭아 축제</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="sejong4.html" class="dp1">역사/문화</a>
+                        <ul class="sub">
+                            <li><a href="sejong4.html#page1">역사여행</a></li>
+                            <li><a href="sejong4.html#page2">문화여행</a></li>
+                            <li><a href="sejong4.html#page3">문화재여행</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="community.html" class="dp1">커뮤니티</a>
+                        <ul class="sub">
+                            <li><a href="board_list.html">게시판</a></li>
+                            <li><a href="notice.html">공지사항</a></li>
+                            <li><a href="gallery.html">포토 갤러리</a></li>
+                            <li><a href="impress.html">이용 후기</a></li>
+                            <li><a href="certifyingshot.html">인증샷 갤러리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	<div class="content">
+		<h2 class="title">게시판 목록</h2>
+		<table class="table" id="data">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>글쓴이</th>
+					<th>작성일</th>
+					<th>조회수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><a href="board_read.html">제목입니다</a></td>
+					<td>작성자입니다</td>
+					<td>
+						2021-01-01
+					</td>
+					<td>36</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+		$(function(){
+			$("#data").DataTable()
+		});
+		</script>
+	</div>
+	<footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="">관광사업소</a></li>
+                <li><a href="">패밀리사이트</a></li>
+            </ul>
+        </nav>
+        <div class="ft_wrap">
+            <nav class="linkbar">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">홈페이지 의견접수</a></li>
+                    <li><a href="">뷰어다운로드</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="addr">세종특별자치시 한누리대로 2130 (보람동) (우)30151 / 대표전화 (044) 120</p>
+                <p class="copy">Copyright  © 세종특별자치시. All Rights Reserved.</p>
+            </div>
+            <div class="wa"><img src="./img/wacc-logo.png" alt="WA인증로고"></div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

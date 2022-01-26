@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해양수산부</title>
+    <!--메타포-->
+    <meta name="title" content="" comment="해양수산부">
+    <meta name="keywords" content="" comment="해양수산부,해양,수산부,해양수산">
+    <meta name="description" content="" comment="해양수산부 공식 사이트">
+    <!--오픈 그래프-->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="해양수산부">
+    <meta property="og:description" content="해양수산부,해양,수산부,해양수산">
+    <meta property="og:image" content="website">
+    <meta property="og:url" content="https://www.mof.go.kr/">
+    <!--파비콘-->
+    <link rel="stylesheet" href="data/favicon.ico" comment="파비콘">
+    <!--필요한 라이브러리-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- 구글 애널리틱스 연결 : 방문자 통계 및 로그분석-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216631800-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-216631800-1');
+    </script>
+
+    <!-- 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    -->
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 사용자 외부 스타일 연결 -->
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/slick.css">
+<link rel="stylesheet" href="js/datatables.min.css">
+<link rel="stylesheet" href="css/slick-theme.css">
+<script src="js/slick.js"></script>
+<script src="js/datatables.min.js"></script>
+    <style>
+    .write {float: right; margin-right: 60px; margin-top: 200px; 
+        border: 1px solid #666; width: 80px; height: 25px; 
+        text-align: center; border-radius: 5px; font-weight: 600;}
+    a {color: #000;}
+    .table { width: 800px;}
+    tbody {width: 800px;} 
+    tr {margin:15px;}
+    td {margin:15px;}  
+    .btn-primary {width: 80px; height: 30px; background-color:#fff; 
+        border-radius: 10px; border: 1px solid #333; cursor: pointer;}
+    .form_group { list-style:none; }
+    .form_group li { padding:8px; clear:both; margin:8px; }
+    .tit {text-align: center;}
+    #container {min-height: 480px;}
+    .form-control {width: 300px; height: 50px;}
+    .main_color1 { background-color: #1d4bb0;}
+    .main_color2 { background-color: #3340f5;}
+    .base_color1 { background-color: #fff; }
+    .base_color2 { background-color: #202020; }
+
+    .vs { clear:both; width: 100%; position:relative; max-height:540px; overflow:hidden; }
+    .vs_pic_box { width:400%; overflow-x:hidden; }
+    .vs_pic_box:after { content:""; display:block; clear:both; }
+    .vs_pic_box li { float:left; width: 25%; }
+    .vs_pic_box li img { display:block; width: 100%; }
+    .btn_box1 li button.vs_btn { display:block; outline: 0; border:0; background-color: transparent; 
+    width: 50px; height: 75px; background-repeat: no-repeat; background-image: url("data/visualArr.png"); 
+    position:absolute; top:42%; margin-top:-37px; z-index:20; cursor:pointer; }
+    .btn_box1 li button.vs_btn.prev { left:30px; background-position: left center;}
+    .btn_box1 li button.vs_btn.next { right:30px; background-position: right center;}
+    
+    .ico_box { clear:both; width: 100%; height: 80px; padding-bottom: 15px; background-color: rgb(236, 254, 255); padding-top: 15px; overflow:hidden; }
+    .ico_box:after { content:""; clear:both; display:block; }
+    .ico_wrap { width: 1200px; margin:10px auto; }
+    .ico_wrap li { width: 200px; float:left; height: 80px; }
+    .ico_wrap li a { display:block; padding:10px 10px 10px 72px; background-repeat: no-repeat; background-position:10px center; line-height:20px; font-weight: bold; color:#666; }
+    .ico_wrap li.ico1 a { background-image: url("data/main_icon01.png"); }
+    .ico_wrap li.ico2 a { background-image: url("data/main_icon02.png"); }
+    .ico_wrap li.ico3 a { background-image: url("data/main_icon03.png"); }
+    .ico_wrap li.ico4 a { background-image: url("data/main_icon04.png"); }
+    .ico_wrap li.ico5 a { background-image: url("data/main_icon05.png"); }
+    .ico_wrap li.ico6 a { background-image: url("data/main_icon06.png"); }
+
+    .over_sl_box { clear:both; width: 113%; max-height:420px; overflow:hidden; margin-bottom: 20px; 
+    margin-top: 20px; position:relative; overflow:hidden;  margin-left: -13%; }
+    .over_sl_box:after { content:""; display:block; clear:both; }
+    .over_sl_box ul { clear:both; width:200%; height: 320px; overflow:hidden; }
+    .over_sl_box ul li { float:left; width:10%; margin-left:1.5%; margin-right:1.5%; }
+    .over_sl_box ul li a { display:block; }
+    .over_sl_box ul li a img { display:block; width: 100%; }
+    .over_btn_box { width:1px; height: 30px; position:relative; margin:20px auto;  }
+    .over_btn_box button { display:block; border:0; outline:0; width:14px; height:14px;  
+    border-radius:8px; background-color: #666; float:left; cursor:pointer; bottom:20px; z-index:20;
+    position:absolute; }
+    .over_btn_box button.item1 { left:0px; }
+    .over_btn_box button.item2 { left:20px; }
+    .over_btn_box button.item3 { left:40px; }
+    .over_btn_box button.item4 { left:60px; }
+    .over_btn_box button.item5 { left:80px; }
+    .over_btn_box button.item6 { left:100px; }
+    .over_btn_box button.item7 { left:120px; }
+    .over_btn_box button.item8 { left:140px; }
+    .over_btn_box button.item9 { left:160px; }
+    .over_btn_box button.item10 { left:180px; }
+    .over_btn_box button.act { background-color: rgb(20, 75, 255); }
+
+    .contact_box { clear:both; width: 100%; height: 240px; overflow:hidden;  }
+    .contact_box:after { content:""; display:block; clear:both; }
+    .contact_wrap { width:1200px; margin:30px auto; height:200px; }
+    .noti_box { width: 400px; float:left; margin-right: 50px; }
+    .ra_item { display:none; }
+    .noti_wrap { clear:both; }
+    .noti_wrap .noti { display:none; width: 400px; height: 200px; }
+    #ra1:checked ~ .noti_wrap .noti.item1 { display:block; }
+    #ra2:checked ~ .noti_wrap .noti.item2 { display:block; }
+
+    .noti_lb_box { clear:both; height: 48px; }
+    .noti_lb_box li { float:left; width: 100px; text-align: center; height: 48px; line-height: 48px;
+     cursor: pointer; }
+    .noti_lb_box li.more_item { float:right;  font-size:14px; font-weight: bold;  }
+    .noti_lb_box li label { color:#000; font-weight: normal; cursor: pointer; }
+    #ra1:checked ~ .noti_lb_box li.item1 label { color:rgb(0, 0, 0); font-weight:bold; }
+    #ra2:checked ~ .noti_lb_box li.item2 label { color:rgb(0, 0, 0); font-weight:bold; }
+
+    .news_box { width: 400px; float:left; margin-right: 50px; }
+    .news_wrap { clear:both; }
+    .news_wrap .news { display:none; width: 400px; height:200px; }
+    #ra3:checked ~ .news_wrap .news.item1 { display:block; }
+    #ra4:checked ~ .news_wrap .news.item2 { display:block; }
+
+    .news_lb_box { clear:both; height: 48px; }
+    .news_lb_box li { float:left; width: 100px; text-align: center; height: 48px; line-height: 48px;
+     cursor: pointer; }
+    .news_lb_box li.more_item { float:right; font-size:14px; font-weight: bold; }
+    .news_lb_box li label { color:#000; font-weight: normal;  cursor: pointer; }
+    #ra3:checked ~ .news_lb_box li.item1 label { color:rgb(0, 0, 0); font-weight:bold; }
+    #ra4:checked ~ .news_lb_box li.item2 label { color:rgb(0, 0, 0); font-weight:bold; }
+    .noti_wrap, .news_wrap { border-top:2px solid #333; }
+
+    .tel_box { width: 300px; height: 200px; float:right; background-color:#1d4baf; 
+    background-image: url("./include/data/info-mo.png"); background-repeat: no-repeat; background-position:220px bottom; }
+    .tel_wrap { width: 186px; padding: 20px 20px; }
+    .tel_wrap li { line-height:36px; background-repeat: no-repeat; background-position:0px center; }
+    .tel_wrap li a { display:block; color:#fff; font-weight: bold; font-size:14px; padding-left: 32px; }
+    .tel_wrap li.map1 { background-image: url("data/info-loca.png"); }
+    .tel_wrap li.map2 { background-image: url("data/info-tel.png"); }
+    .tel_wrap li.map3 { background-image: url("data/info-com.png"); }
+    .board_tb { display:table; border-collapse: collapse; width:98%; margin: 10px auto; }
+    .board_tb tr { display:table-row; }
+    .board_tb td { display:table-cell; font-size:14px; line-height: 24px; }
+    .board_tb .board_tit { width: 260px; }
+    .board_tb .board_tit a { display:block; width: 250px; color:#666; font-weight:bold; 
+    padding-right: 10px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .board_tb .board_date { text-align:center; }
+    .board_tb td .ico_img { display:none; }
+        </style>
+    <title>게시판 목록</title>
+</head>
+<body>
+    <div class="container">
+        <header class="hd">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                <img src="data/logo.png" alt="로고타입">
+                </a>
+                <div class="search_wrap">
+                        <form action="" method="">
+                            <div class="search_fr">
+                                <input type="text" id="keyword" name="keyword" placeholder="검색어 입력">
+                                <input type="submit" class="search_btn" value="검색">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="lang_link">
+                        <nav class="tnb">
+                    <ul>
+                            <li><a href="list.html">게시판</a></li>
+                            <li><a href="reg.html">회원가입</a></li>
+                            <li><a href="login.html">로그인</a></li>
+                            <li><a href="index.html">로그아웃</a></li>
+                            <li><a href="member.html">회원관리</a></li>
+                    </ul>
+                </nav>
+                    </div>
+                </div>
+                <nav class="gnb">
+                    <div class="gnb_group nav1">
+                        <ul class="l_gnb">
+                            <li class="item1">
+                                <a href="" class="dp1">정보공개</a>
+                                <ul class="sub">
+                                    <li>
+                                        <a href="" class="dp2">정보공개제도 안내</a>
+                                        <dl class="dep3">
+                                            <dt>정보공개</dt>
+                                            <dd><a href="" class="dp3">정보공개제도안내</a></dd>
+                                            <dd><a href="" class="dp3">비공개 대상정보 세부기준</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">사전정보공표</a>
+                                        <dl class="dep3">
+                                            <dt>사전정보공표</dt>
+                                            <dd><a href="" class="dp3">사전정보공표목록</a></dd>
+                                            <dd><a href="" class="dp3">부서별 사전공표정보</a></dd>
+                                            <dd><a href="" class="dp3">재정정보</a></dd>
+                                            <dd><a href="" class="dp3">국고보조금 정보</a></dd>
+                                            <dd><a href="" class="dp3">감사계획 및 결과</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">정보목록</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">공공데이터 개방</a>
+                                        <dl class="dep3">
+                                            <dt>공공데이터 개방</dt>
+                                            <dd><a href="" class="dp3">공공데이터 개념</a></dd>
+                                            <dd><a href="" class="dp3">개방현황</a></dd>
+                                            <dd><a href="" class="dp3">활용모델</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">정책실명제</a>
+                                        <dl class="dep3">
+                                            <dt>정책실명제</dt>
+                                            <dd><a href="" class="dp3">중점관리 대상사업</a></dd>
+                                            <dd><a href="" class="dp3">국민신청실명제</a></dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="item2">
+                                <a href="" class="dp1">민원·참여</a>
+                                <ul class="sub">
+                                    <li>
+                                        <a href="" class="dp2">국민참여</a>
+                                        <dl class="dep3">
+                                            <dt>국민참여</dt>
+                                            <dd><a href="" class="dp3">국민정책제안</a></dd>
+                                            <dd><a href="" class="dp3">정책토론</a></dd>
+                                            <dd><a href="" class="dp3">전자공청회</a></dd>
+                                            <dd><a href="" class="dp3">설문조사</a></dd>
+                                            <dd><a href="" class="dp3">국민생각함</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">규제개혁</a>
+                                        <dl class="dep3">
+                                            <dt>규제개혁</dt>
+                                            <dd><a href="" class="dp3">규제개혁이란?</a></dd>
+                                            <dd><a href="" class="dp3">규제혁신과제현황</a></dd>
+                                            <dd><a href="" class="dp3">심사중인규제법안</a></dd>
+                                            <dd><a href="" class="dp3">규제법령정보</a></dd>
+                                            <dd><a href="" class="dp3">규제개혁제안</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">신고센터</a>
+                                        <dl class="dep3">
+                                            <dt>신고센터</dt>
+                                            <dd><a href="" class="dp3">공직자 부조리신고</a></dd>
+                                            <dd><a href="" class="dp3">비영리법인 부정비리신고</a></dd>
+                                            <dd><a href="" class="dp3">청탁금지법 위반신고</a></dd>
+                                            <dd><a href="" class="dp3">예산낭비신고센터</a></dd>
+                                            <dd><a href="" class="dp3">갑질신고</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">전자민원</a>
+                                        <dl class="dep3">
+                                            <dt>JIS인증</dt>
+                                            <dd><a href="" class="dp3">민원신청</a></dd>
+                                            <dd><a href="" class="dp3">유사민원조회</a></dd>
+                                            <dd><a href="" class="dp3">나의민원</a></dd>
+                                            <dd><a href="" class="dp3">민원서식</a></dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="item3">
+                                <a href="" class="dp1">알림·뉴스</a>
+                                <ul class="sub">
+                                    <li>
+                                        <a href="" class="dp2">알림</a>
+                                        <dl class="dep3">
+                                            <dt>알림</dt>
+                                            <dd><a href="" class="dp3">공지사항</a></dd>
+                                            <dd><a href="" class="dp3">입찰</a></dd>
+                                            <dd><a href="" class="dp3">인사</a></dd>
+                                            <dd><a href="" class="dp3">채용·공모</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">뉴스</a>
+                                        <dl class="dep3">
+                                            <dt>뉴스</dt>
+                                            <dd><a href="" class="dp3">보도자료</a></dd>
+                                            <dd><a href="" class="dp3">설명자료</a></dd>
+                                            <dd><a href="" class="dp3">사진뉴스</a></dd>
+                                            <dd><a href="" class="dp3">동영상뉴스</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">일자리 정보</a>
+                                        <dl class="dep3">
+                                            <dt>일자리 정보</dt>
+                                            <dd><a href="" class="dp3">일자리검색</a></dd>
+                                            <dd><a href="" class="dp3">자격증</a></dd>
+                                            <dd><a href="" class="dp3">전문인력양성</a></dd>
+                                            <dd><a href="" class="dp3">이색직업소개</a></dd>
+                                            <dd><a href="" class="dp3">이달의채용정보</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">해양방사능 정보</a>
+                                        <dl class="dep3">
+                                            <dt>해양방사능 정보</dt>
+                                            <dd><a href="" class="dp3">해양방사능 정보</a></dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="item4">
+                                <a href="" class="dp1">자주찾는 메뉴</a>
+                                <ul class="sub1">
+                                    <li class="menu_thumb1">
+                                        <a href="sub2.html" class="menu_thumb_link">주요업무계획</a>
+                                    </li>
+                                    <li class="menu_thumb2">
+                                        <a href="sub3.html" class="menu_thumb_link">법령정보</a>
+                                    </li>
+                                    <li class="menu_thumb3">
+                                        <a href="sub1.html" class="menu_thumb_link">적극행정</a>
+                                    </li>
+                                    <li class="menu_thumb4">
+                                        <a href="sub2.html" class="menu_thumb_link">민원신청</a>
+                                    </li>
+                                    <li class="menu_thumb5">
+                                        <a href="sub3.html" class="menu_thumb_link">직원검색</a>
+                                    </li>
+                                    <li class="menu_thumb6">
+                                        <a href="sub1.html" class="menu_thumb_link">통계정보</a>
+                                    </li>
+                                    <li class="menu_thumb7">
+                                        <a href="sub3.html" class="menu_thumb_link">국제해사동향</a>
+                                    </li>
+                                    <li class="menu_thumb8">
+                                        <a href="sub2.html" class="menu_thumb_link">사전정보공표</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>  
+                    <div class="gnb_group nav2">
+                        <ul class="r_gnb">
+                            <li class="item1">
+                                <a href="" class="dp1">기관소개</a>
+                                <ul class="sub">
+                                    <li>
+                                        <a href="" class="dp2">기관소개</a>
+                                        <dl class="dep3">
+                                            <dt>기관소개</dt>
+                                            <dd><a href="" class="dp3">장관소개</a></dd>
+                                            <dd><a href="" class="dp3">설립목적</a></dd>
+                                            <dd><a href="" class="dp3">해양수산부연혁</a></dd>
+                                            <dd><a href="" class="dp3">비전 및 목표</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">조직안내</a>
+                                        <dl class="dep3">
+                                            <dt>조직안내</dt>
+                                            <dd><a href="" class="dp3">조직현황</a></dd>
+                                            <dd><a href="" class="dp3">직원안내</a></dd>
+                                            <dd><a href="" class="dp3">담당업무별 연락처</a></dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">찾아오시는 길</a>
+                                        <dl class="dep3">
+                                            <dt>찾아오시는 길</dt>
+                                            <dd><a href="" class="dp3">본부</a></dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="item2">
+                                <a href="" class="dp1">산하기관</a>
+                                <ul class="sub">
+                                    <li>
+                                        <a href="" class="dp2">산하기관</a>
+                                        <dl class="dep3">
+                                            <dt>산하기관</dt>
+                                            <dd><a href="" class="dp3">한국해양교통안전공단</a></dd>
+                                            <dd><a href="" class="dp3">한국해양진흥공사</a></dd>
+                                            <dd><a href="" class="dp3">해양수산과학기술진흥원</a></dd>
+                                            <dd><a href="" class="dp3">해양환경공단</a></dd>
+                                            <dd><a href="" class="dp3">국립해양박물관</a></dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="item3">
+                                <a href="" class="dp1">고객센터</a>
+                                <ul class="sub">
+                                    <li>
+                                        <a href="" class="dp2">QA</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">민원신청</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="dp2">개인정보처리방침</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="item4">
+                                <a href="" class="dp1">사이트맵</a>
+                            </li>
+                        </ul>
+                    </div>      
+                </nav>  
+            </header>
+            </div>
+		<div class="container">
+			<header>
+				<h1 class="tit"> 게시판</h1>
+			</header>
+			<hr />
+			<section id="container">
+					<table class="table table-hover">
+						<thead>
+							<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th></tr>
+						</thead>
+
+							<tr>
+								<td>1</td>
+								<td>
+									<a href="listDetail.html">게시판 제목</a>
+								</td>
+								<td>홍길동</td>
+								<td>2022-01-17</td>
+								<td>132</td>
+							</tr>	
+                            <tr>
+								<td>2</td>
+								<td>
+									<a href="listDetail.html">게시판 제목</a>
+								</td>
+								<td>홍킬동</td>
+								<td>2022-01-17</td>
+								<td>102</td>
+							</tr>
+                            <tr>
+								<td>3</td>
+								<td>
+									<a href="listDetail.html">게시판 제목</a>
+								</td>
+								<td>홍칼동</td>
+								<td>2022-01-17</td>
+								<td>156</td>
+							</tr>
+                            <tr>
+								<td>4</td>
+								<td>
+									<a href="listDetail.html">게시판 제목</a>
+								</td>
+								<td>홍갈동</td>
+								<td>2022-01-17</td>
+								<td>526</td>
+							</tr>
+                            <tr>
+								<td>5</td>
+								<td>
+									<a href="listDetail.html">게시판 제목</a>
+								</td>
+								<td>홍걸동</td>
+								<td>2022-01-17</td>
+								<td>102</td>
+							</tr>
+                            <tr>
+								<td>6</td>
+								<td>
+									<a href="listDetail.html">게시판 제목</a>
+								</td>
+								<td>홍귈동</td>
+								<td>2022-01-17</td>
+								<td>527</td>
+							</tr>
+                            <tr>
+								<td>7</td>
+								<td>
+									<a href="listDetail.html">게시판 제목</a>
+								</td>
+								<td>홍궐동</td>
+								<td>2022-01-17</td>
+								<td>1245</td>
+							</tr>
+                            <tr>
+								<td>8</td>
+								<td>
+									<a href="listDetail.html">게시판 제목</a>
+								</td>
+								<td>홍긜동</td>
+								<td>2022-01-17</td>
+								<td>572</td>
+							</tr>	
+                            
+					</table>
+                    <ul class="write"><li><a href="write.html">글쓰기</a></li></ul>	 
+			</section>
+            
+        </div>
+        <footer class="ft" id="ft">
+            <div class="wrap wide">
+                <div class="cont">
+                    <ul class="fnb">
+                        <li>
+                            <a href="">찾아오시는 길</a>
+                        </li>
+                        <li>
+                            <a href=""><span>개인정보처리방침</span></a>
+                        </li>
+                        <li>
+                            <a href="">저작권정책</a>
+                        </li>
+                        <li>
+                            <a href="">이메일무단수집거부</a>
+                        </li>
+                    </ul>
+                    <div class="textBox">
+                        <span class="address">우)30110 세종특별자치시 다솜2로 94(어진동) 정부세종청사 5동 해양수산부</span>
+                        <span class="tel">정부통합콜센터 - 국번없이 110 / 당직실: 044-200-5990</span>
+                        <span class="copy">Copyright &copy; Ministry of Oceans and Fisheries. All rights reserved.</span>
+                    </div>
+                    <div class="ftLogo"><img src="data//ftLogo.png" alt=""></div>
+                </div>
+                <div class="bannerBox">
+                    <ul>    
+                        <li>
+                            <a href="https://www.innogov.go.kr/ucms/main/main.do" target="_blank" title="보다나은정부">
+                                <img src="data/ftBanner01.png" alt="보다나은정부"></a>
+                            <a href="http://wa.or.kr" target="_blank" title="한국웹접근성인증평가원" >
+                                <img src="data/btn_wamark.png" alt="한국웹접근성인증평가원"></a>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </footer>
+	</body>
+</html>
